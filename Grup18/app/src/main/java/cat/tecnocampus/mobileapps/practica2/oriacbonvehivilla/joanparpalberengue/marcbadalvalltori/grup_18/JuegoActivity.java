@@ -84,6 +84,14 @@ public class JuegoActivity extends AppCompatActivity {
             }
         });
 
+        Button botonAtras = findViewById(R.id.ButtonAtrasPartida);
+        botonAtras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
     }
 
     private void comprobarFinDeJuego() {
