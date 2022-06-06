@@ -1,15 +1,20 @@
 package cat.tecnocampus.mobileapps.practica2.oriacbonvehivilla.joanparpalberengue.marcbadalvalltori.grup_18;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,16 +24,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button botonJugar = findViewById(R.id.botonJugar);
+
         final EditText editTextNickName = findViewById(R.id.editTextTextPersonName);
+
         botonJugar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String nickname = editTextNickName.getText().toString();
-                // TODO: Validar nombre
-
-                Intent intent = new Intent(MainActivity.this, JuegoActivity.class);
-                intent.putExtra("nickname", nickname);
-                startActivity(intent);
+                Pattern pat = Pattern.compile("[a-zA-Z0-9]{5,20}");
+                if (pat.matcher(nickname).matches()&&!nickname.equalsIgnoreCase("nickname")) {
+                    Intent intent = new Intent(MainActivity.this, JuegoActivity.class);
+                    intent.putExtra("nickname", nickname);
+                    startActivity(intent);
+                } else {
+                    editTextNickName.setError("Nickname invalid");
+                }
             }
         });
 

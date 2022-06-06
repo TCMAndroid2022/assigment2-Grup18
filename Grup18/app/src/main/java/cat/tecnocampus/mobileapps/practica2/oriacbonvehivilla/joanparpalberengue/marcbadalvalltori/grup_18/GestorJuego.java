@@ -7,9 +7,6 @@ public class GestorJuego {
     private int puntuacion = 0;
     private boolean juegoCompletado = false;
 
-    // TODO
-    // numero de rondas
-
 
     public GestorJuego(String palabra) {
         this.palabra = palabra;
