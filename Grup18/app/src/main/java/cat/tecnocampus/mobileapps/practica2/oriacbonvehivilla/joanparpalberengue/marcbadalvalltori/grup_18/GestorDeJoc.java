@@ -1,47 +1,48 @@
 package cat.tecnocampus.mobileapps.practica2.oriacbonvehivilla.joanparpalberengue.marcbadalvalltori.grup_18;
 
-public class GestorJuego {
-    private String palabra;
-    private boolean estado[];
-    private int intentos = 0;
-    private int puntuacion = 0;
-    private boolean juegoCompletado = false;
+public class GestorDeJoc {
+    private String paraula;
+    private boolean estat[];
+    private int intents = 0;
+    private int puntuacio = 0;
+    private boolean jocComplet = false;
 
 
-    public GestorJuego(String palabra) {
-        this.palabra = palabra;
-        estado = new boolean[palabra.length()];
+    public GestorDeJoc(String palabra) {
+        this.paraula = palabra;
+        estat = new boolean[palabra.length()];
         for(int i = 0; i<palabra.length();i++){
-            estado[i] = false;
+            estat[i] = false;
         }
 
     }
 
-    public void anadirLetra(char letra) {
-        intentos++;
-        for(int i = 0; i<palabra.length();i++){
-            if(palabra.charAt(i) == letra){
-                estado[i] = true;
+
+    public void afegirLletra(char letra) {
+        intents++;
+        for(int i = 0; i<paraula.length();i++){
+            if(paraula.charAt(i) == letra){
+                estat[i] = true;
             }
         }
     }
 
     public void resolver(String cadena ){
-        juegoCompletado = true;
-        if(cadena.equalsIgnoreCase(this.palabra)){
-            int numeroLetras = palabra.length();
-            puntuacion = (int)((double)(numeroLetras - intentos) / (double )numeroLetras * 10.0);
+        jocComplet = true;
+        if(cadena.equalsIgnoreCase(this.paraula)){
+            int numeroLetras = paraula.length();
+            puntuacio = (int)((double)(numeroLetras - intents) / (double )numeroLetras * 10.0);
         } else {
-            puntuacion = 0;
+            puntuacio = 0;
         }
 
     }
 
     public String getCadenaPanel() {
         String cadena = "";
-        for(int i = 0; i<palabra.length();i++){
-            if(estado[i] == true) {
-                cadena += palabra.charAt(i);
+        for(int i = 0; i<paraula.length();i++){
+            if(estat[i] == true) {
+                cadena += paraula.charAt(i);
             }
             else {
                 cadena += " _ ";
@@ -50,14 +51,14 @@ public class GestorJuego {
         return cadena;
     }
 
-    public boolean terminado() {
-        if(juegoCompletado == true){
+    public boolean finalitzat() {
+        if(jocComplet == true){
             return true;
         }
 
 
-        for(int i = 0; i<palabra.length();i++){
-            if(estado[i] == false){
+        for(int i = 0; i<paraula.length();i++){
+            if(estat[i] == false){
                 return false;
             }
         }
@@ -65,7 +66,7 @@ public class GestorJuego {
     }
 
     public int getPuntuacion(){
-        return puntuacion;
+        return puntuacio;
     }
 
 }

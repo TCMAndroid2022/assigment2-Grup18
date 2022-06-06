@@ -18,7 +18,7 @@
             android:name=".ListadoActivity"
             android:exported="false" />
         <activity
-            android:name=".JuegoActivity"
+            android:name=".JocActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -2,7 +2,8 @@
     <string name="app_name">Grup-18</string>
     <string name="nombre">Joc de Paraules</string>
     <string name="jugar">Jugar</string>
-    <string name="poner_letra">Posar lletra</string>
-    <string name="resolver">Resoldre</string>
-    <string name="listado">Llistat de puntuacions</string>
+    <string name="posar_lletra">Posar lletra</string>
+    <string name="resoldre">Resoldre</string>
+    <string name="listat">Llistat de puntuacions</string>
+    <string name="Enrere">Enrere</string>
 </resources>
